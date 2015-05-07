@@ -14,6 +14,7 @@ class ConsoleData {
 	//Will add a string to the array for the TextArea
 	void addStringToConsole(String s) {
 		consoleOutput.add(s);
+		//test
 	}
 	
 	//Return the text from the array in a format that will display properly in the TextArea
