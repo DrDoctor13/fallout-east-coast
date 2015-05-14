@@ -1,91 +1,41 @@
-//Significant code contribution by Kolby Dukes
+import java.util.Scanner;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
+/*
+Fallout: East Coast
+Fallout was originally created by Interplay and is copyrighted by Bethesda Softworks
+"East Coast" is owned by Buck Shockley
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+*/
 
-import javax.swing.*;
-
-//Class to hold the data to be output to the Text Area
-class ConsoleData {
-	ArrayList<String> consoleOutput = new ArrayList<String>();
-	
-	//Will add a string to the array for the TextArea
-	void addStringToConsole(String s) {
-		consoleOutput.add(s);
-		//test
-	}
-	
-	//Return the text from the array in a format that will display properly in the TextArea
-	String returnConsoleOutputForTextArea() {
-		//Create a new string that will hold our text to be set to the JTextArea
-		String outputText = "";
-		//Using a for loop that for each String in the array, it adds to the end of our output String the next line with a line break
-		for (String s : consoleOutput) {
-			outputText = outputText + s + "\n";
-			}
-				
-		return outputText;
-	}
-	
+class player{
+	String name;
+	String gender;
+	boolean alive;
 }
 
-
-
-public class EastCoast {
+public class FalloutEastCoast {
 	public static void main(String[] args) {
-		JFrame jf = new JFrame();
-		jf.setTitle("Fallout: East Coast");
-		jf.setSize(600, 700);
+		boolean gameRunning = true;
 		
-		final JTextField CommandField = new JTextField();
-		jf.getContentPane().add(CommandField, BorderLayout.PAGE_END);
+		player p1 = new player();
+		p1.name = "";
+		p1.gender = "";
+		p1.alive = true;
 		
-		//Create a ConsoleData instance to hold the data for the text area
-		final ConsoleData cd = new ConsoleData();
-		cd.addStringToConsole("Please enter your name!");
+		@SuppressWarnings("resource")
+		Scanner input = new Scanner(System.in);
 		
-
-		final JTextArea LogField = new JTextArea();
-		
-		//Create a class to listen for the "enter" on the text field
-		class TextFieldActionListener implements ActionListener {
-			//This method will get called whenever the text field gets an "enter" key
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				//read the text from the command field
-				String response = CommandField.getText();
-				
-				//if/then/else statement to take action based on the given input
-				 if (response.equals("Jump out the window")) {
-					//add some response to the console data (cd)
-					 cd.addStringToConsole("Oh no, you died.");
-				 }
-				
-				//Update the log field with the new data
-				LogField.setText(cd.returnConsoleOutputForTextArea());
-				
-				//Just for debugging
-				System.out.println("Enter was pressed.");
+		int gameState = 0;
+		while (gameRunning == true){
+			while (gameState == 0){
 				
 			}
-			
 		}
-		
-		CommandField.addActionListener(new TextFieldActionListener());
-		
-		
-		
-		
-		LogField.setText(cd.returnConsoleOutputForTextArea());
-		jf.getContentPane().add(LogField, BorderLayout.CENTER);
-		LogField.setEditable(false);
-		
-				
-		
-		jf.setVisible(true);
-
 	}
-
 }
+
+//shoutout to eclipse for erasing half my code
+//*headdesk*
+
+
