@@ -25,7 +25,7 @@ class player{ //class to hold certain variables pertaining to the player.
 	ArrayList<String> inv = new ArrayList<String>(); //Opens an array for the inv command
 }
 
-public class FalloutEastCoast {
+class FalloutEastCoast {
 	public static void main(String[] args) {
 
 		
