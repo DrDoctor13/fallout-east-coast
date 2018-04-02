@@ -18,14 +18,13 @@ class player{ //class to hold certain variables pertaining to the player.
 		double rando = Math.random(); //Generates a random number between 0 and 1
 		double randoRound = rando * 5; //multiples the random number by 5.
 		double deathNumber = Math.floor(randoRound); //rounds down to the nearest whole number, resulting in choosing from 0 to 4.
-		ArrayList<String> deaths = new ArrayList<String>(); //Thanks Kolby (for help implementing) and Alina (for array idea).
-		deaths.addAll(Arrays.asList("The darkness of the afterlife is all that awaits you now. May you find more peace in that world than you found in this one...", "Not even the carrion eaters are interested in your irradiated corpse...", "Your life ends in the wasteland...", "You fought valiantly, but to no avail. Your twisted and ruined body goes down in a hail of bullets... and thus ends your life in the wasteland...", "You have perished."));
+		ArrayList<String> deaths = new ArrayList<>(Arrays.asList("The darkness of the afterlife is all that awaits you now. May you find more peace in that world than you found in this one.", "Not even the carrion eaters are interested in your irradiated corpse.", "Your life ends in the wasteland.", "You fought valiantly, but to no avail. Your twisted and ruined body goes down in a hail of bullets... and thus ends your life in the wasteland.", "You have perished."));
 		System.out.println(deaths.get((int) deathNumber));
 	}
-	ArrayList<String> inv = new ArrayList<String>(); //Opens an array for the inv command
+	ArrayList<String> inv = new ArrayList<>(); //Opens an array for the inv command
 }
 
-public class FalloutEastCoast {
+class FalloutEastCoast {
 	public static void main(String[] args) {
 
 		
@@ -44,7 +43,7 @@ public class FalloutEastCoast {
 		
 		boolean gameRunning = true; //a loop to keep the game from closing prematurely
 		
-		while (gameRunning == true){
+		while (gameRunning){
 			if (gameState == 5862){ //a gamestate to terminate the game
 				gameRunning = false;
 			}
@@ -76,8 +75,7 @@ public class FalloutEastCoast {
 				System.out.println("The voice startled you, you tried to sit up, but felt a hand on your chest.");
 				System.out.println("'Easy there, kid...you've been out for a while, now...'");
 				System.out.println("'Do you remember your name?'");
-				String name = input.nextLine(); //opens the console for input
-				p1.name = name; 
+				p1.name = input.nextLine();
 				p1.alive = true; //IT'S ALIIIIIIVE
 				System.out.println("'" + p1.name + ", eh? Well, I can't say it's the name I'd have picked for you, but if you say so...'");
 				System.out.println("'You were beat around quite a bit out there, those mutants nearly turned you to mush.'");
@@ -411,4 +409,3 @@ public class FalloutEastCoast {
 }
 }
 //so long, and thanks for all the fish.
-//baby dragon
