@@ -405,9 +405,9 @@ class FalloutEastCoast {
 				System.out.println("A society of sorts would soon begin, with several small gang wars invading the streets. As time went on, these would thin out.");
 				System.out.println("Civilization, as uncertain as it was, had finally come to the wasteland.");
 				gameState = 5862;
+				}
 			}
 		}
 	}
-}
 }
 //so long, and thanks for all the fish.
