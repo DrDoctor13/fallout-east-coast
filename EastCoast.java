@@ -16,11 +16,15 @@ class player{ //class to hold certain variables pertaining to the player.
 	boolean alive;
 	void playerDeath(){ //a void is a function that can be called on at any time, anywhere in the code.
 		double rand = Math.random(); //Generates a random number between 0 and 1
-		double randRound = rand * 5; //multiples the random number by 5.
+		double randRound = rand * 6; //multiples the random number by 5.
 		double deathNumber = Math.floor(randRound); //rounds down to the nearest whole number, resulting in choosing from 0 to 4.
-		ArrayList<String> deaths;
-		deaths = new ArrayList<>(Arrays.asList("The darkness of the afterlife is all that awaits you now. May you find more peace in that world than you found in this one.", "Not even the carrion eaters are interested in your irradiated corpse...", "Your life ends in the wasteland.", "You fought valiantly, but to no avail. Your twisted and ruined body goes down in a hail of bullets... and thus ends your life in the wasteland.", "You have perished.", "Rest in peace."));
-		System.out.println(deaths.get((int) deathNumber));
+		ArrayList<String> deaths = new ArrayList<>(Arrays.asList("The darkness of the afterlife is all that awaits you now. May you find more peace in that world than you found in this one.",
+                "Not even the carrion eaters are interested in your irradiated corpse.",
+                "Your life ends in the wasteland.",
+                "You fought valiantly, but to no avail. Your twisted and ruined body goes down in a hail of bullets... and thus ends your life in the wasteland.",
+                "You have perished.",
+                "Rest in peace."));
+        System.out.println(deaths.get((int) deathNumber));
 	}
 	ArrayList<String> inv = new ArrayList<>(); //Opens an array for the inv command
 }
